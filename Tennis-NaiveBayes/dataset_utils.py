@@ -6,6 +6,7 @@ import numpy as np
 class TennisDataset():
     
     def __init__(self, dirpath="/home/yangming/Datasets/ToyDatasets/tennis"):
+        self.dirpath = dirpath
         with open(os.path.join(dirpath, "train"), "r") as filer:
             for idx, line in enumerate(filer):
                 attributes, values, label = self._line_parser(line)
@@ -30,7 +31,7 @@ class TennisDataset():
         
     def __call__(self, mode="train"):
         X, Y = [], []
-        with open(os.path.join(TennisDataset.DATA_DIR_PATH, mode), "r") as filer:
+        with open(os.path.join(self.dirpath, mode), "r") as filer:
             for line in filer:
                 attributes, values, label = self._line_parser(line)
                 xl = []

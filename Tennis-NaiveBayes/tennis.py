@@ -18,5 +18,5 @@ def experiment(method="GaussianNB"):
     print()
     
 if __name__ == "__main__":
-    for method in ["BernoulliNB", "GaussianNB", "MultinomialNB"]:
+    for method in ["BernoulliNB", "GaussianNB", "MultinomialNB", "ComplementNB"]:
         experiment(method)
